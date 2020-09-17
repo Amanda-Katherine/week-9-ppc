@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_140943) do
+ActiveRecord::Schema.define(version: 2020_09_17_132618) do
 
   create_table "parties", force: :cascade do |t|
     t.string "name"
     t.date "date"
     t.integer "budget"
+  end
+
+  create_table "snacks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

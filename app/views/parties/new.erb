@@ -1,1 +1,24 @@
 <h1>New Party</h1>
+
+<%= form_for(@party) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %><br>
+
+  <%= f.label :budget %>
+  <%= f.number_field :budget %><br><br>
+
+  <%= f.label "Snacks" %>
+  <%= f.fields_for :snacks do |s| %><br>
+    <%= s.label :name %>
+    <%= s.text_field :name %><br>
+
+    <%= s.label :description %>
+    <%= s.text_field :description %><br><br>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
+
